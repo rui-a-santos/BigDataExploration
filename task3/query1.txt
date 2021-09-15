@@ -1,0 +1,1 @@
+Select max(w.query) from (Select user, count(query) as query from logs group by user)w;

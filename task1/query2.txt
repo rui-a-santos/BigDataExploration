@@ -1,0 +1,8 @@
+db.cl.aggregate([
+	{"$group": 
+		{
+			"_id": null,
+			"Average Ratio": { "$avg": { $cond: [{ $eq: ["$friendsCount", 0] }, "N/A", {"$divide":["$followersCount","$friendsCount"]} ]}}
+		}
+	}
+])

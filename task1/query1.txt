@@ -1,0 +1,10 @@
+db.cl.find(
+	{
+		$and:[
+			{"friendsCount": {$lt:25}},
+			{"displayName": {$regex: '^[Aa].*es$'}}
+		],
+	},
+	{_id:0, "displayName":1,"friendsCount":1,"followersCount":1}
+).sort({"displayName":-1})
+

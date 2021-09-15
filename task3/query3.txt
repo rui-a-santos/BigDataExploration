@@ -1,0 +1,1 @@
+select count(distinct w.user) from (Select user, substr(time, 7,2) as time, query from logs)w where w.query IS NOT NULL and w.time IN ('21','22');

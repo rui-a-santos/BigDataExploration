@@ -1,0 +1,9 @@
+db.cl.distinct("displayName",
+	{
+		$and:[
+			{"friendsCount": {$gt:1000}},
+			{"verb": {$regex: 'post'}},
+			{"body": {$regex: 'Madrid'}}
+		],
+	}
+).length
